@@ -96,8 +96,8 @@ function updateToolTip(chosenxAxis, circlesGroup) {
   }
 
 // Retrieve data from the CSV file and execute everything below
-d3.csv("data.csv", function (err, data) {
-    if (err) throw err;
+d3.csv("data/data.csv", function (error, data) {
+    if (error) throw error;
   
     // parse data
     data.forEach(function (file) {
@@ -106,13 +106,13 @@ d3.csv("data.csv", function (err, data) {
       file.healthcareLow = +file.healthcareLow;
       file.healthcareHigh = +file.healthcareHigh;
     });
-  
+    console.log(d3.extent(data, d => d.healthcare));
     // xLinearScale function above csv import
     let xLinearScale = xScale(data, chosenxAxis);
   
     // Create y scale function
     let yLinearScale = d3.scaleLinear()
-      .domain([10, d3.max(data, d => d.exercise)])
+      .domain( d3.extent(data, d => d.healthcare))
       .range([height, 0]);
   
     // Create initial axis functions
