@@ -184,7 +184,7 @@ d3.csv("data.csv", function (error, data) {
       .attr("x", 0 - (height / 2))
       .attr("dy", "2em")
       .classed("axis-text", true)
-      .text("Exercise %");
+      .text("Poverty %");
   
     // updateToolTip function above csv import
     var circlesGroup = updateToolTip(chosenxAxis, circlesGroup);
@@ -230,7 +230,7 @@ d3.csv("data.csv", function (error, data) {
             .attr("fill", "white");
   
           // changes classes to change bold text
-          if (chosenxAxis == "fertility_above") {
+          if (chosenxAxis == "Healthcare_above") {
             healthcareAboveLabel
               .classed("active", true)
               .classed("inactive", false);
