@@ -66,7 +66,7 @@ function renderCircles(circlesGroup, newxScale, chosenxAxis) {
 // function used for updating circles group with new tooltip
 function updateToolTip(chosenxAxis, circlesGroup) {
 
-    if (chosenxAxis == "healthcare") {
+    if (chosenxAxis === "healthcare") {
       var xlabel = "Healthcare %: ";
       var ylabel = "Poverty %: "
     } 
@@ -96,7 +96,7 @@ function updateToolTip(chosenxAxis, circlesGroup) {
   }
 
 // Retrieve data from the CSV file and execute everything below
-d3.csv("data/data.csv", function (error, data) {
+d3.csv("data.csv", function (error, data) {
     if (error) throw error;
   
     // parse data
