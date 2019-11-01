@@ -1,6 +1,6 @@
 // @TODO: YOUR CODE HERE!
 
-let svgWidth = 700;
+let vgWidth = 700;
 let svgHeight = 500;
 
 let margin = {
@@ -102,13 +102,13 @@ d3.csv("assets/data/data.csv").then(function(censusData) {
       .style("text-anchor", "middle")
       .text("Lacks Healthcare (%)");   
       
-    // Add tool tips
+// Add tool tips
     var toolTip = d3.tip()
         .attr('class', 'd3-tip')
-        .html(function (d) { return `State: ${d.state} <br> Poverty: ${d.poverty}% <br> Lacks Healthcare: ${d.healthcare}%`});
+        .html(function (d) { return `State: ${d.state} <br> Poverty: ${d.povertyText}% <br> Lacks Healthcare: ${d.healthcareText}%`});
 
     circlesGroup.call(toolTip);
 
-    //add events
+//add events
     circlesGroup.on("mouseover", toolTip.show).on("mouseout", toolTip.hide);
 });
